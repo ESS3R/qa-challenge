@@ -1,0 +1,32 @@
+{
+  "name": "projeto-clo",
+  "version": "1.0.0",
+  "description": "Este repositório contém dois testes práticos para a vaga de **QA Engineer**. O objetivo é validar suas habilidades de automação de testes com:\r 1. **Validação de fluxos de UI** com **Playwright**.\r 2. **Interação e validação de APIs** com **Playwright** e **Node.js**.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/api/user.add.att.ts"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "@types/jest": "^27.5.2",
+    "axios": "^1.7.7",
+    "jest": "^27.5.1",
+    "playwright": "^1.0.0",
+    "ts-jest": "^27.1.5"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.47.2",
+    "node-fetch": "^3.3.2"
+  }
+}
