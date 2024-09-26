@@ -67,3 +67,5 @@ Foram feitos todos os scripts para testes de UI com sucesso, o comando npx playw
  
  3.**Pipeline de CI/CD:**
    Foi a unica melhoria não atingida, infelizmente não consegui colocar essa melhoria.
+
+   Estou a disposição para conversar!
