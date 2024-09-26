@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 
 (async () => {
-    // FunÁ„o para registrar logs inteligentes
+    // Fun√ß√£o para registrar logs 
     function log(message: string) {
         const timestamp = new Date().toISOString();
         console.log(`[${timestamp}] ${message}`);
@@ -9,7 +9,7 @@ import { chromium } from 'playwright';
 
     log('Inicializando o navegador Chromium...');
     const browser = await chromium.launch({
-        headless: false // headless: false para ver o navegador em aÁ„o
+        headless: false // headless: false para ver o navegador em a√ß√£o
     });
     const page = await browser.newPage();
 
@@ -18,19 +18,19 @@ import { chromium } from 'playwright';
     await page.context().clearCookies();
 
     // **Login**
-    log('Navegando para a p·gina de login...');
+    log('Navegando para a p√°gina de login...');
     await page.goto('https://www.saucedemo.com/');
 
-    log('Preenchendo o campo de usu·rio com "standard_user".');
-    await page.fill('#user-name', 'standard_user');  // Campo de usu·rio usando ID
+    log('Preenchendo o campo de usu√°rio com "standard_user".');
+    await page.fill('#user-name', 'standard_user');  // Campo de usu√°rio usando ID
 
     log('Preenchendo o campo de senha com "secret_sauce".');
     await page.fill('#password', 'secret_sauce');    // Campo de senha usando ID
 
-    log('Clicando no bot„o de login e aguardando navegaÁ„o...');
+    log('Clicando no bot√£o de login e aguardando navega√ß√£o...');
     await Promise.all([
-        page.click('#login-button'),                // Clique no bot„o de login
-        page.waitForNavigation({ waitUntil: 'load' }) // Aguarda a navegaÁ„o
+        page.click('#login-button'),                // Clique no bot√£o de login
+        page.waitForNavigation({ waitUntil: 'load' }) // Aguarda a navega√ß√£o
     ]);
 
     // **Adicionar Produtos ao Carrinho**
@@ -41,22 +41,22 @@ import { chromium } from 'playwright';
         log(`Clicando no produto: ${product}`);
         await page.click(`text=${product}`);          // Clica no produto para visualizar
 
-        log(`Clicando no bot„o "Add to cart" para: ${product}`);
-        await page.click('.btn_primary');              // Clica no bot„o "Add to cart"
+        log(`Clicando no bot√£o "Add to cart" para: ${product}`);
+        await page.click('.btn_primary');              // Clica no bot√£o "Add to cart"
 
-        log('Retornando ‡ p·gina de produtos...');
+        log('Retornando √† p√°gina de produtos...');
         await Promise.all([
-            page.goBack(),                             // Retorna ‡ p·gina de produtos
-            page.waitForNavigation({ waitUntil: 'load' }) // Aguarda a navegaÁ„o
+            page.goBack(),                             // Retorna √† p√°gina de produtos
+            page.waitForNavigation({ waitUntil: 'load' }) // Aguarda a navega√ß√£o
         ]);
     }
 
-    // **Navegar atÈ o Carrinho**
-    log('Clicando no Ìcone do carrinho...');
-    await page.click('.shopping_cart_link');  // Clica no Ìcone do carrinho
+    // **Navegar at√© o Carrinho**
+    log('Clicando no √≠cone do carrinho...');
+    await page.click('.shopping_cart_link');  // Clica no √≠cone do carrinho
 
-    log('Aguardando a p·gina do carrinho...');
-    await page.goto('https://www.saucedemo.com/cart.html'); // aguarda a p·gina do carrinho
+    log('Aguardando a p√°gina do carrinho...');
+    await page.goto('https://www.saucedemo.com/cart.html'); // aguarda a p√°gina do carrinho
 
     // **Remover Produtos do Carrinho**
     log('Removendo produtos do carrinho...');
@@ -66,16 +66,16 @@ import { chromium } from 'playwright';
     await page.click('#remove-sauce-labs-bike-light');
     log('Produto removido: Sauce Labs Bike Light.');
 
-    // **ValidaÁ„o dos Produtos Restantes no Carrinho**
+    // **Valida√ß√£o dos Produtos Restantes no Carrinho**
     log('Validando os produtos restantes no carrinho...');
     const remainingProducts = await page.locator('.cart_item');  // Seleciona todos os itens do carrinho
     const remainingProductNames = await remainingProducts.locator('.inventory_item_name').allTextContents();  // Captura todos os nomes dos produtos
 
-    // Verifica se o produto restante no carrinho È o correto
+    // Verifica se o produto restante no carrinho √© o correto
     if (remainingProductNames.includes('Sauce Labs Bolt T-Shirt') && remainingProductNames.length === 1) {
-        log('Teste passou: O produto restante no carrinho est· correto.');
+        log('Teste passou: O produto restante no carrinho est√° correto.');
     } else {
-        log('Teste falhou: O produto restante no carrinho n„o est· correto ou h· mais produtos.');
+        log('Teste falhou: O produto restante no carrinho n√£o est√° correto ou h√° mais produtos.');
     }
 
     // Fechando o navegador
