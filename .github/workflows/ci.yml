@@ -24,5 +24,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests  //  oi to aq
+      - name: Run tests  
         run: npx playwright test
