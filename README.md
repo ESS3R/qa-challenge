@@ -65,5 +65,5 @@ Foram feitos todos os scripts para testes de UI com sucesso, o comando npx playw
 2. **Execução Paralela:**
    Foi concluído todos os testes de forma parelea ultilizando os workes de forma que deixe os testes interamente automatizados.
  
-3.**Pipeline de CI/CD:**
+ 3.**Pipeline de CI/CD:**
    Foi a unica melhoria não atingida, infelizmente não consegui colocar essa melhoria.
