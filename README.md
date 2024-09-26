@@ -59,13 +59,13 @@ Foram feitos todos os scripts para testes de UI com sucesso, o comando npx playw
 
 ### Melhorias Técnicas Realizadas
 
-1. **Relatórios de Testes:**
+   1. **Relatórios de Testes:**
    A primeira melhoria realizada foi a inclusão do relatório HTML localizado em "Projeto clo\playwright-report\index.html" ou digitando o comando npx playwright show-report.
 
-2. **Execução Paralela:**
+   2. **Execução Paralela:**
    Foi concluído todos os testes de forma parelea ultilizando os workes de forma que deixe os testes interamente automatizados.
- 
- 3.**Pipeline de CI/CD:**
+   
+   3.**Pipeline de CI/CD:**
    Foi a unica melhoria não atingida, infelizmente não consegui colocar essa melhoria.
 
-   Estou a disposição para conversar!
+Estou a disposição para conversar!
